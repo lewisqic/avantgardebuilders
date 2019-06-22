@@ -109,6 +109,14 @@ Route::group(['middleware' => ['guest'], 'namespace' => 'Index'], function () {
      */
     Route::get('homes', ['uses' => 'IndexHomesController@showHome']);
     Route::get('homes/what-we-do', ['uses' => 'IndexHomesController@showWhatWeDo']);
+    Route::get('homes/past-work', ['uses' => 'IndexHomesController@showPastWork']);
+    Route::get('homes/our-partners', ['uses' => 'IndexHomesController@showOurPartners']);
+    Route::get('homes/about-us', ['uses' => 'IndexHomesController@showAboutUs']);
+    Route::get('homes/contact', ['uses' => 'IndexHomesController@showContact']);
+    Route::post('homes/contact', ['uses' => 'IndexHomesController@handleContact']);
+
+    Route::get('homes/quick-estimate', ['uses' => 'IndexHomesController@showQuickEstimate']);
+    Route::get('homes/documents', ['uses' => 'IndexHomesController@showDocuments']);
 
     /**
      * Builders

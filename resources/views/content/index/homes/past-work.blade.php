@@ -1,6 +1,6 @@
 @extends('layouts.homes')
 
-@section('title', 'What We Do')
+@section('title', 'Past Work')
 
 @section('content')
 
@@ -8,7 +8,7 @@
         <div class="container">
 
             <h1>
-                <span>What We <span class="text-ag-light">Do</span></span>
+                <span>Past <span class="text-ag-light">Work</span></span>
             </h1>
 
         </div>

@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Avant-Garde Homes</title>
+    <title>@yield('title', '') {{ !\Request::is('homes') ? '|' : '' }} Avant-Garde Homes</title>
 
     <link rel="stylesheet" href="{{ url('css/core.css') }}">
+    @stack('styles')
 
 </head>
 <body>
@@ -27,20 +28,20 @@
             </button>
             <div class="collapse navbar-collapse" id="header_nav">
                 <ul class="navbar-nav ml-7">
-                    <li class="nav-item">
+                    <li class="nav-item {{ \Request::is('homes/what-we-do') ? 'active' : '' }}">
                         <a href="{{ url('homes/what-we-do') }}" class="nav-link">What We Do</a>
                     </li>
-                    <li class="nav-item active">
-                        <a href="#" class="nav-link">Past Work</a>
+                    <li class="nav-item {{ \Request::is('homes/past-work') ? 'active' : '' }}">
+                        <a href="{{ url('homes/past-work') }}" class="nav-link">Past Work</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Our Partners</a>
+                    <li class="nav-item {{ \Request::is('homes/our-partners') ? 'active' : '' }}">
+                        <a href="{{ url('homes/our-partners') }}" class="nav-link">Our Partners</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">About Us</a>
+                    <li class="nav-item {{ \Request::is('homes/about-us') ? 'active' : '' }}">
+                        <a href="{{ url('homes/about-us') }}" class="nav-link">About Us</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Contact</a>
+                    <li class="nav-item {{ \Request::is('homes/contact') ? 'active' : '' }}">
+                        <a href="{{ url('homes/contact') }}" class="nav-link">Contact</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">

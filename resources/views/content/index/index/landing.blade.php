@@ -44,8 +44,8 @@
             <hr>
             <p class="text-center">
                 Formally known as Far West Construction, we've recently been re-branded as Avant-Garde Builders and Avant-Gard Homes.
-                <br>Same great people, same proven track record, just a fancy new name.
-                <br>We're as dedicated as ever to maintaining our long-standing track record of quality products and professional service.
+                <br>Same great people, same proven track record, just a new name.
+                <br>We're as dedicated as ever to maintaining our long-standing track record of quality projects and professional service.
             </p>
         </div>
     </div>
