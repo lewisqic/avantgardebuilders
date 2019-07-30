@@ -55,6 +55,9 @@ class Html {
                         $buttons .= '<a href="' . url($url) . '" class="btn btn-sm btn-outline-light invisible ' . (in_array('disable_sidebar', $buttons_arr) ? '' : 'open-sidebar') . '"><i class="fal fa-lg fa-edit text-primary"></i></a>';
                     }
 				break;
+                case 'download':
+                    $buttons .= '<a href="' . url($url) . '" class="btn btn-sm btn-outline-light invisible"><i class="fal fa-lg fa-download text-success"></i></a>';
+                    break;
 			}
 		}
 		if ( !empty($buttons_arr['delete']) || !empty($buttons_arr['restore']) ) {

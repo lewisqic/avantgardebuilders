@@ -11,7 +11,7 @@
     @stack('styles')
 
 </head>
-<body>
+<body class="public">
 
 <div class="header">
     <div class="container">

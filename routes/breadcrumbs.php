@@ -28,7 +28,7 @@
 \Breadcrumbs::for('admin/members', function($trail)
 {
     $trail->parent('admin');
-    $trail->push('Members', url('admin/members'));
+    $trail->push('Clients', url('admin/members'));
 });
 \Breadcrumbs::for('admin/members/create', function($trail)
 {
@@ -66,6 +66,50 @@
 {
     $trail->parent('admin/member-roles/show', $role);
     $trail->push('Edit', url('admin/member-roles/edit/' . $role->id));
+});
+
+// pins
+\Breadcrumbs::for('admin/pins', function($trail)
+{
+    $trail->parent('admin');
+    $trail->push('Pins', url('admin/pins'));
+});
+\Breadcrumbs::for('admin/pins/create', function($trail)
+{
+    $trail->parent('admin/pins');
+    $trail->push('Create', url('admin/pins/create'));
+});
+\Breadcrumbs::for('admin/pins/show', function($trail, $pin)
+{
+    $trail->parent('admin/pins');
+    $trail->push($pin->address, url('admin/pins/' . $pin->id));
+});
+\Breadcrumbs::for('admin/pins/edit', function($trail, $pin)
+{
+    $trail->parent('admin/pins/show', $pin);
+    $trail->push('Edit', url('admin/pins/edit/' . $pin->id));
+});
+
+// documents
+\Breadcrumbs::for('admin/documents', function($trail)
+{
+    $trail->parent('admin');
+    $trail->push('Documents', url('admin/documents'));
+});
+\Breadcrumbs::for('admin/documents/create', function($trail)
+{
+    $trail->parent('admin/documents');
+    $trail->push('Create', url('admin/documents/create'));
+});
+\Breadcrumbs::for('admin/documents/show', function($trail, $document)
+{
+    $trail->parent('admin/documents');
+    $trail->push($document->label, url('admin/documents/' . $document->id));
+});
+\Breadcrumbs::for('admin/documents/edit', function($trail, $pin)
+{
+    $trail->parent('admin/documents/show', $pin);
+    $trail->push('Edit', url('admin/documents/edit/' . $pin->id));
 });
 
 // administrators

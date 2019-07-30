@@ -25,8 +25,6 @@
                 <tr>
                     <th data-name="name" data-order="primary-asc">Name</th>
                     <th data-name="email">Email</th>
-                    <th data-name="roles">Roles</th>
-                    <th data-name="superuser">Superuser</th>
                     <th data-name="created_at" data-o-sort="true">Date Created</th>
                     {!! Html::dataTablesActionColumn() !!}
                 </tr>

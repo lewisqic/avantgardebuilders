@@ -46,12 +46,8 @@ class AdminMemberController extends Controller
      */
     public function create()
     {
-        $companies = Company::has('users')->with(['users' => function($query) {
-            $query->where('company_owner', true);
-        }])->get();
         $data = [
             'title' => 'Add',
-            'companies' => $companies
         ];
         return view('content.admin.members.create-edit', $data);
     }
@@ -63,18 +59,10 @@ class AdminMemberController extends Controller
      */
     public function edit($id)
     {
-        $companies = Company::has('users')->with(['users' => function($query) {
-            $query->where('company_owner', true);
-        }])->get();
         $user = User::findOrFail($id);
-        $user->load('company.subscription');
         $data = [
             'title' => 'Edit',
             'user' => $user,
-            'company' => $user->company,
-            'subscription' => $user->company->subscription,
-            'payment_methods' => $user->company->paymentMethods,
-            'companies' => $companies
         ];
         return view('content.admin.members.create-edit', $data);
     }
@@ -87,13 +75,8 @@ class AdminMemberController extends Controller
     public function show($id)
     {
         $user = User::findOrFail($id);
-        $user->load('company.subscription');
         $data = [
             'user' => $user,
-            'company' => $user->company,
-            'subscription' => $user->company->subscription,
-            'payment_methods' => $user->company->paymentMethods,
-            'payments' => $user->company->subscription->payments,
         ];
         return view('content.admin.members.show', $data);
     }
@@ -107,19 +90,14 @@ class AdminMemberController extends Controller
     {
         $data = \Request::all();
         $user_data = $data['user'];
-        $company_data = $data['company'];
-        $subscription_data = $data['subscription'];
-        $payment_methods_data = $data['payment_methods'];
 
-        if ( $user_data['company_id'] == 'new' ) {
-            // create company
-            $company = CompanyService::create($company_data, $payment_methods_data);
-            $user_data['company_id'] = $company->id;
-            $user_data['company_owner'] = true;
-            $subscription_data['company_id'] = $company->id;
-            // create subscription
-            $subscription = CompanySubscriptionService::create($subscription_data);
-        }
+        // create company
+        $company = CompanyService::create([
+            'name' => $user_data['first_name'] . ' ' . $user_data['last_name'],
+            'email' => $user_data['email'],
+        ]);
+        $user_data['company_id'] = $company->id;
+        $user_data['company_owner'] = true;
 
         // create the user
         $user_data['type'] = User::MEMBER_ID;
@@ -141,21 +119,9 @@ class AdminMemberController extends Controller
     {
         $data = \Request::all();
         $user_data = $data['user'];
-        $company_data = $data['company'];
-        $subscription_data = $data['subscription'];
-        $payment_methods_data = $data['payment_methods'];
 
         // update user
         $user = UserService::load($user_data['id'])->update($user_data);
-        $company_old = $user->company;
-        // update company
-        $company = CompanyService::load($user->company_id)->update($company_data, $payment_methods_data);
-        // update subscription
-        $subscription = CompanySubscriptionService::load($user->company->subscription->id)->update($subscription_data);
-        // update payment methods
-        if ( !empty($company_old->customer_profile_id) ) {
-            $payment_methods = CompanyPaymentMethodService::updateAll($company, $payment_methods_data);
-        }
 
         \Msg::success($user->name . ' has been <strong>updated</strong>');
         return redir('admin/members');

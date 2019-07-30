@@ -51,7 +51,7 @@
                                         @endforeach
                                     </div>
                                 @elseif ( $setting->type == 'textarea' )
-                                    <textarea name="settings[{{ $setting->key }}]" class="form-control" placeholder="{{ $setting->label }}" {!! $setting->is_required ? 'data-fv-notempty="true"' : '' !!}>{{ $setting->value }}</textarea>
+                                    <textarea name="settings[{{ $setting->key }}]" rows="6" class="form-control" placeholder="{{ $setting->label }}" {!! $setting->is_required ? 'data-fv-notempty="true"' : '' !!}>{{ $setting->value }}</textarea>
                                 @else
                                     <input type="text" name="settings[{{ $setting->key }}]" class="form-control" placeholder="{{ $setting->label }}" value="{{ $setting->value }}" {!! $setting->is_required ? 'data-fv-notempty="true"' : '' !!}>
                                 @endif

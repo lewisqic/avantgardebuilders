@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{ url('css/core.css') }}">
 
 </head>
-<body>
+<body class="public">
 
 <div class="header">
     <div class="container">

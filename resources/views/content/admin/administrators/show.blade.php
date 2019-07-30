@@ -28,9 +28,6 @@
             <li class="nav-item">
                 <a class="nav-link active" data-toggle="tab" href="#show_details" role="tab">Details</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#show_permissions" role="tab">Roles/Permissions</a>
-            </li>
         </ul>
 
         <div class="tab-content page-tabs-content">
@@ -79,52 +76,6 @@
                     <label class="col-form-label col-sm-2">Date Created:</label>
                     <div class="col-sm-10 form-control-static">
                         {{ $user->created_at->toDayDateTimeString() }}
-                    </div>
-                </div>
-
-            </div>
-            <div class="tab-pane fade" id="show_permissions" role="tabpanel">
-
-                <div class="form-group row">
-                    <label class="col-form-label col-sm-2">Role(s):</label>
-                    <div class="col-sm-10 form-control-static">
-                        @if ( $user->roles )
-                            @foreach ( $user->roles as $role )
-                                <div><a href="{{ url('admin/administrator-roles/' . $role['id']) }}">{{ $role['name'] }}</a></div>
-                            @endforeach
-                        @else
-                            <em class="text-muted">no role set</em>
-                        @endif
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label class="col-form-label col-sm-2">Superuser:</label>
-                    <div class="col-sm-10 form-control-static">
-                        {{ $user->superuser ? 'Yes' : 'No' }}
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label class="col-form-label col-sm-2">Custom Permissions:</label>
-                    <div class="col-sm-10 form-control-static">
-                        {{ $user->custom_permissions ? 'Yes' : 'No' }}
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label class="col-form-label col-sm-2">Permissions:</label>
-                    <div class="col-sm-10 form-control-static">
-                        @if ( $user_permissions )
-                            @foreach ( $user_permissions as $group => $actions )
-                                <div class="{{ !$loop->first ? 'mt-3' : '' }}">{{ $group }}</div>
-                                @foreach ( $actions as $label )
-                                    <div class="ml-4"><small>{{ $label }}</small></div>
-                                @endforeach
-                            @endforeach
-                        @else
-                            <em class="text-muted">no custom permissions set</em>
-                        @endif
                     </div>
                 </div>
 

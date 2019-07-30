@@ -4,11 +4,10 @@
 /**
  * Auth route group
  */
-Route::group(['prefix' => 'auth', 'middleware' => ['guest'], 'namespace' => 'Auth'], function () {
+Route::group(['prefix' => 'auth', 'namespace' => 'Auth'], function () {
     // GET
     Route::get('/', function() { return redirect('auth/login'); });
     Route::get('login', ['uses' => 'AuthIndexController@showLogin']);
-    Route::get('logout', ['uses' => 'AuthIndexController@handleLogout']);
     Route::get('forgot', ['uses' => 'AuthIndexController@showForgot']);
     Route::get('reset/{token}', ['uses' => 'AuthIndexController@showReset'])->name('password.reset');
     // POST
@@ -16,15 +15,18 @@ Route::group(['prefix' => 'auth', 'middleware' => ['guest'], 'namespace' => 'Aut
     Route::post('forgot', ['uses' => 'AuthIndexController@handleForgot']);
     Route::post('reset', ['uses' => 'AuthIndexController@handleReset']);
 });
+Route::group(['prefix' => 'auth', 'namespace' => 'Auth'], function () {
+    Route::get('logout', ['uses' => 'AuthIndexController@handleLogout']);
+});
 
 
 /**
  * Admin route group
  */
-/*Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin', 'permission'], 'namespace' => 'Admin'], function() {
+Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin'], 'namespace' => 'Admin'], function() {
 
     // GET
-    Route::get('/', ['uses' => 'AdminIndexController@showDashboard']);
+    Route::get('/', function() { return redirect('admin/documents'); });
     Route::get('data', ['uses' => 'AdminIndexController@data']);
     Route::post('save-configurator', 'AdminIndexController@saveConfigurator');
     Route::post('save-favorite', 'AdminIndexController@saveFavorite');
@@ -35,11 +37,21 @@ Route::group(['prefix' => 'auth', 'middleware' => ['guest'], 'namespace' => 'Aut
     Route::get('profile', ['uses' => 'AdminProfileController@index']);
     Route::put('profile', ['uses' => 'AdminProfileController@update']);
 
+    // pins
+    Route::get('documents/{id}/download', ['uses' => 'AdminDocumentController@download'])->name('admin.documents.download');
+    Route::patch('documents/{id}', ['uses' => 'AdminDocumentController@restore'])->name('admin.documents.restore');
+    Route::get('documents/data', ['uses' => 'AdminDocumentController@dataTables']);
+    Route::resource('documents', 'AdminDocumentController', ['as' => 'admin']);
+
     // members
     Route::get('members/data', ['uses' => 'AdminMemberController@dataTables']);
     Route::patch('members/{id}', ['uses' => 'AdminMemberController@restore'])->name('admin.members.restore');
     Route::post('members/refund-payment', ['uses' => 'AdminMemberController@refundPayment']);
     Route::resource('members', 'AdminMemberController', ['as' => 'admin']);
+
+    // pins
+    Route::get('pins/data', ['uses' => 'AdminPinController@dataTables']);
+    Route::resource('pins', 'AdminPinController', ['as' => 'admin']);
 
     // member roles
     //Route::get('member-roles/data', ['uses' => 'AdminMemberRoleController@dataTables']);
@@ -64,13 +76,13 @@ Route::group(['prefix' => 'auth', 'middleware' => ['guest'], 'namespace' => 'Aut
     Route::get('activity/data', ['uses' => 'AdminActivityController@dataTables']);
     Route::resource('activity', 'AdminActivityController', ['as' => 'admin']);
 
-});*/
+});
 
 
 /**
  * Account route group
  */
-/*Route::group(['prefix' => 'account', 'middleware' => ['auth:account'], 'namespace' => 'Account'], function() {
+Route::group(['prefix' => 'account', 'middleware' => ['auth:account'], 'namespace' => 'Account'], function() {
 
     // GET
     Route::get('/', ['uses' => 'AccountIndexController@showDashboard']);
@@ -94,7 +106,7 @@ Route::group(['prefix' => 'auth', 'middleware' => ['guest'], 'namespace' => 'Aut
     Route::get('settings', ['uses' => 'AccountSettingController@index'])->name('account.settings.index');
     Route::post('settings', ['uses' => 'AccountSettingController@update'])->name('account.settings.update');
 
-});*/
+});
 
 
 Route::group(['middleware' => ['guest'], 'namespace' => 'Index'], function () {

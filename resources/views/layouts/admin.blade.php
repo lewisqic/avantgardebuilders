@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Admin | Laravel Starter v18</title>
+    <title>Admin | Avant-Garde Builders</title>
 
     <link rel="stylesheet" id="adminly_css" href="{{ url('css/' . $css_file) }}">
 
@@ -17,7 +17,7 @@
         <div class="container-fluid container-layout">
             <nav class="navbar navbar-expand-lg navbar-dark">
 
-                <a class="navbar-brand" href="{{ url('admin') }}"><i class="fab fa-jedi-order"></i> Laravel Starter</a>
+                <a class="navbar-brand" href="{{ url('admin') }}">Avant-Garde Admin</a>
 
                 <div class="collapse navbar-collapse">
                     <form action="{{ url('admin/search') }}" method="get" class="form-inline ml-7" id="global_search_form">
@@ -90,13 +90,19 @@
                 @php $has_submenu = false; @endphp
                 <ul class="menu">
 
-                    {{-- Dashboard --}}
-                    <li class="{{ \Request::is('admin') ? 'active' : '' }}"><a href="{{ url('admin') }}">Dashboard</a></li>
-
-
-                    {{-- Members --}}
+                    {{-- Clients --}}
                     @if ( has_permission('admin.members.index') )
-                        <li class="{{ \Request::is('admin/members*') ? 'active' : '' }}"><a href="{{ url('admin/members') }}">Members</a></li>
+                        <li class="{{ \Request::is('admin/members*') ? 'active' : '' }}"><a href="{{ url('admin/members') }}">Clients</a></li>
+                    @endif
+
+                    {{-- Documents --}}
+                    @if ( has_permission('admin.documents.index') )
+                        <li class="{{ \Request::is('admin/documents*') ? 'active' : '' }}"><a href="{{ url('admin/documents') }}">Documents</a></li>
+                    @endif
+
+                    {{-- Documents --}}
+                    @if ( has_permission('admin.pins.index') )
+                        <li class="{{ \Request::is('admin/pins*') ? 'active' : '' }}"><a href="{{ url('admin/pins') }}">Map Pins</a></li>
                     @endif
 
                     {{-- System --}}
@@ -112,7 +118,7 @@
                             <li class="{{ \Request::is('admin/administrators*') ? 'active' : '' }}"><a href="{{ url('admin/administrators') }}"><i class="fal fa-user-tie fa-fw"></i> Administrators</a></li>
                             @endif
                             @if ( has_permission('admin.administrator-roles.index') )
-                            <li class="{{ \Request::is('admin/administrator-roles*') ? 'active' : '' }}"><a href="{{ url('admin/administrator-roles') }}"><i class="fal fa-key fa-fw"></i> Roles/Permissions</a></li>
+                            {{--<li class="{{ \Request::is('admin/administrator-roles*') ? 'active' : '' }}"><a href="{{ url('admin/administrator-roles') }}"><i class="fal fa-key fa-fw"></i> Roles/Permissions</a></li>--}}
                             @endif
                             @if ( has_permission('admin.settings.index') )
                             <li class="{{ \Request::is('admin/settings*') ? 'active' : '' }}"><a href="{{ url('admin/settings') }}"><i class="fal fa-cogs fa-fw"></i> Settings</a></li>
