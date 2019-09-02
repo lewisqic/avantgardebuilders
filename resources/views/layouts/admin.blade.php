@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Admin | Avant-Garde Builders</title>
+    <title>Admin | Avant-Garde Homes</title>
 
     <link rel="stylesheet" id="adminly_css" href="{{ url('css/' . $css_file) }}">
 
@@ -20,14 +20,6 @@
                 <a class="navbar-brand" href="{{ url('admin') }}">Avant-Garde Admin</a>
 
                 <div class="collapse navbar-collapse">
-                    <form action="{{ url('admin/search') }}" method="get" class="form-inline ml-7" id="global_search_form">
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <button class="btn" type="submit"><i class="fal fa-search fa-lg"></i></button>
-                            </div>
-                            <input type="text" name="keywords" class="form-control" placeholder='Type "/" to begin searching...'>
-                        </div>
-                    </form>
                     <ul class="navbar-nav ml-5 mr-auto">
                         <li class="nav-item dropdown dropdown-icon">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><i class="fas fa-heart-circle fa-lg"></i></a>

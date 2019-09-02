@@ -2,17 +2,6 @@
 
 @section('content')
 
-
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item"><a href="#">Customers</a></li>
-        <li class="breadcrumb-item"><a href="#">John Doe</a></li>
-        <li class="breadcrumb-item active">Edit</li>
-    </ol>
-
-    <div class="float-right">
-        <a href="#" class="btn btn-primary"><i class="fal fa-plus"></i> Add User</a>
-    </div>
     <h2><i class="fal fa-cogs"></i> Settings</h2>
 
     <div class="content card">

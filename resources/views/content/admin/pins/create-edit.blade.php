@@ -28,7 +28,8 @@
             <div class="form-group row">
                 <label class="col-form-label col-sm-3">Address</label>
                 <div class="col-sm-9">
-                    <textarea name="address" class="form-control" rows="3" placeholder="Pin Address" data-fv-notempty="true" autofocus>{{ $pin->address ?? old('address') }}</textarea>
+                    <input type="text" name="address" class="form-control" placeholder="Pin Address" data-fv-notempty="true" value="{{ $pin->address ?? old('address') }}">
+                    <div class="form-text text-muted font-13">Address MUST be in lat/lon format, e.g. <code>39.360950, -111.591620</code></div>
                 </div>
             </div>
 

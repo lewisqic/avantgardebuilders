@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers\Index;
 
+use App\Models\Pin;
 use App\Http\Controllers\Controller;
 use App\Mail\ContactForm;
 
@@ -44,7 +45,23 @@ class IndexHomesController extends Controller
      */
     public function showPastWork()
     {
-        return view('content.index.homes.past-work');
+        $all = Pin::all();
+        $colors = $this->pinColors($all);
+        $pins = [];
+        foreach ($all as $pin) {
+            $pins[] = [
+                'lat' => explode(', ', $pin->address)[0],
+                'lon' => explode(', ', $pin->address)[1],
+                'label' => $pin->label,
+                'year' => $pin->year,
+                'color' => $colors[$pin->year]
+            ];
+        }
+        $data = [
+            'pins' => $pins,
+            'colors' => $colors,
+        ];
+        return view('content.index.homes.past-work', $data);
     }
 
     /**
@@ -136,6 +153,23 @@ class IndexHomesController extends Controller
     public function showDocuments()
     {
         return view('content.index.homes.documents');
+    }
+
+    /**
+     * Return array of all colors for years
+     * 
+     * @param $pins
+     */
+    protected function pinColors($pins)
+    {
+        $all_colors = ['blue', 'orange', 'red', 'green', 'ltblue', 'purple', 'yellow', 'pink'];
+        $years = array_unique($pins->pluck('year')->toArray());
+        sort($years);
+        $colors = [];
+        foreach ($years as $index => $year) {
+            $colors[$year] = isset($all_colors[$index]) ? $all_colors[$index] : $all_colors[$index - count($all_colors)];
+        }
+        return $colors;
     }
 
 

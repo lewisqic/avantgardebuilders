@@ -8,7 +8,7 @@
     <title>Avant-Garde Builders</title>
 
     <link rel="stylesheet" href="{{ url('css/core.css') }}">
-
+    @stack('styles')
 </head>
 <body class="public">
 

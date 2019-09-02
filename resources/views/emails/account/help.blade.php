@@ -1,8 +1,8 @@
 @extends('layouts.email')
 
-@section('title', 'Contact Form Results From Avant-Garde Homes')
+@section('title', 'Help/Feedback Form Results From Avant-Garde Client Area')
 
-@section('heading', 'Contact Form Results')
+@section('heading', 'Help/Feedback Form Results')
 @section('heading-color', '#2ca4b3')
 
 @section('content')
@@ -17,10 +17,6 @@
 
     <p>
         <strong>Email:</strong> {{ $email }}
-    </p>
-
-    <p>
-        <strong>Phone:</strong> {{ $phone }}
     </p>
 
     <p>

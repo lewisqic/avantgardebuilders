@@ -85,7 +85,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin'], 'namespace' =
 Route::group(['prefix' => 'account', 'middleware' => ['auth:account'], 'namespace' => 'Account'], function() {
 
     // GET
-    Route::get('/', ['uses' => 'AccountIndexController@showDashboard']);
+    Route::get('/', function() { return redirect('account/documents'); });
+    Route::get('documents', ['uses' => 'AccountIndexController@showDocuments']);
+    Route::get('documents/download/{id}', ['uses' => 'AccountIndexController@downloadDocument']);
+    Route::post('help', ['uses' => 'AccountIndexController@handleHelp']);
     Route::post('save-configurator', 'AccountIndexController@saveConfigurator');
 
     // profile

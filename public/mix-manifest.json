@@ -8,5 +8,6 @@
     "/assets/js/modules/auth.js": "/assets/js/modules/auth.js",
     "/assets/js/modules/authorizenet-payment.js": "/assets/js/modules/authorizenet-payment.js",
     "/assets/js/modules/contact.js": "/assets/js/modules/contact.js",
+    "/assets/js/modules/help.js": "/assets/js/modules/help.js",
     "/assets/js/modules/permissions.js": "/assets/js/modules/permissions.js"
 }

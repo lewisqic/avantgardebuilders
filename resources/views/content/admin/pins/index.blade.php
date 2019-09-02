@@ -19,7 +19,7 @@
             <tr>
                 <th data-name="label">Label</th>
                 <th data-name="address">Address</th>
-                <th data-name="year"data-order="primary-desc">Year</th>
+                <th data-name="year" data-order="primary-desc">Year</th>
                 <th data-name="created_at" data-o-sort="true">Date Created</th>
                 {!! Html::dataTablesActionColumn() !!}
             </tr>

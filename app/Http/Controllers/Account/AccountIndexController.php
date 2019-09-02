@@ -2,8 +2,10 @@
 namespace App\Http\Controllers\Account;
 
 use App\Models\User;
+use App\Models\Document;
 use Facades\App\Services\DocumentService;
 use App\Http\Controllers\Controller;
+use App\Mail\HelpForm;
 
 class AccountIndexController extends Controller
 {
@@ -14,89 +16,52 @@ class AccountIndexController extends Controller
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function showDashboard()
+    public function showDocuments()
     {
-        $data = [];
-        return view('content.account.index.dashboard', $data);
+        $documents = Document::where('user_id', \Auth::user()->id)->orderBy('created_at', 'DESC')->get();
+        $docs = [];
+        foreach ($documents as $doc) {
+            $docs[$doc->type][] = $doc;
+        }
+        ksort($docs);
+        $data = [
+            'documents' => $docs
+        ];
+        return view('content.account.index.documents', $data);
     }
 
     /**
-     * Save our adminly configurator settings
+     * Download a document file
      *
-     * @return \Illuminate\Http\JsonResponse
+     * @param $id
      */
-    public function saveConfigurator()
+    public function downloadDocument($id)
     {
-        $user = User::find(\Auth::user()->id);
-        $user->adminly_settings = \Request::input('adminly_settings');
-        $user->save();
-
-        $colors = implode(',', array_values($user->adminly_settings['colors']));
-
-        // determine the filename based on our selected colors and their index position
-        $filename = '';
-        $color_keys = [];
-        foreach ( $user->adminly_settings['colors'] as $style => $color ) {
-            $color_keys[] = str_pad(array_search($color, User::$adminlyColors), 2, '0', STR_PAD_LEFT);
-        }
-        $filename .= implode('', $color_keys) . '.css';
-
-        $return_var = 0;
-        if ( !file_exists(base_path('public/css/' . $filename)) ) {
-
-            // production
-            //exec('cd ' . base_path() . ' && node node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js --env.colors=' . $colors . ' --env.filename=' . $filename . ' 2>&1', $output, $return_var);
-
-            // development
-            exec('cd ' . base_path() . ' && node node_modules/cross-env/dist/bin/cross-env.js NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js --env.colors=' . $colors . ' --env.filename=' . $filename . ' 2>&1', $output, $return_var);
-
-        } else {
-            if ( $filename == '010504120913.css' ) {
-                $filename = 'core.css';
-            }
-        }
-
-        return response()->json(['success' => $return_var === 0 ? true : false, 'filename' => $filename, 'settings' => $user->adminly_settings]);
-
+        $document = Document::findOrFail(base64_decode($id));
+        $path = storage_path('app/public/' . $document->path);
+        return response()->download($path, $document->filename);
     }
 
     /**
-     * Save our adminly favorite page
+     * Handle the help form
      *
-     * @return \Illuminate\Http\JsonResponse
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function saveFavorite()
+    public function handleHelp()
     {
-        $user = User::find(\Auth::user()->id);
-        $settings = $user->adminly_settings;
-        $favorites = isset($settings['favorites']) && is_array($settings['favorites']) ? $settings['favorites'] : [];
-        $favorites[] = \Request::only('icon', 'title', 'path');
-        array_set($settings, 'favorites', $favorites);
-        $user->adminly_settings = $settings;
-        $user->save();
-        return response()->json(['success' => true, 'message' => 'Page added to favorites list']);
-    }
 
-    /**
-     * Delete favorite page
-     *
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function deleteFavorite()
-    {
-        $path = \Request::input('path');
-        $user = User::find(\Auth::user()->id);
-        $settings = $user->adminly_settings;
-        $favorites = $settings['favorites'];
-        foreach ( $favorites as $index => $fav ) {
-            if ( $fav['path'] == $path ) {
-                unset($favorites[$index]);
-            }
-        }
-        array_set($settings, 'favorites', $favorites);
-        $user->adminly_settings = $settings;
-        $user->save();
-        return response()->json(['success' => true, 'message' => 'Page removed from favorites list']);
+        $data = \Request::all();
+
+        $mail_data = [
+            'first_name' => $data['first_name'],
+            'last_name' => $data['last_name'],
+            'email' => $data['email'],
+            'comments' => $data['comments'],
+        ];
+        \Mail::to('devinlewis@gmail.com')->send(new HelpForm($mail_data));
+
+        return response()->json(['success' => true]);
+
     }
 
 }

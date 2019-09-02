@@ -111,13 +111,14 @@ ADMINLY STYLES
                         border-bottom-color: #f5f6f7;
                     }
                 }
-                &.language {
-                    &:after {
-                        border-bottom-color: #f5f6f7;
+                &.help {
+                    width: 385px;
+                    form {
+                        margin: 20px;
                     }
                 }
             }
-            form {
+            /*form {
                 .input-group {
                     height: 33px;
                 }
@@ -143,7 +144,7 @@ ADMINLY STYLES
                 ::-ms-input-placeholder {
                     color: lighten($primary, 20) !important;
                 }
-            }
+            }*/
             .avatar-wrapper {
                 padding-top: 0;
                 padding-bottom: 0;

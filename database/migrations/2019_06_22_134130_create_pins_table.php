@@ -17,7 +17,7 @@ class CreatePinsTable extends Migration
             $table->increments('id');
             $table->string('label');
             $table->text('address');
-            $table->integer('year');
+            $table->string('color');
             $table->timestamps();
         });
     }

@@ -20151,6 +20151,33 @@ ADMINLY STYLES
 
 .adminly .header .navbar {
   padding: 2px 0;
+  /*form {
+                .input-group {
+                    height: 33px;
+                }
+                button {
+                    background: none;
+                    color: #fff;
+                    border: none;
+                }
+                input {
+                    border: none;
+                    background: none;
+                    color: #fff;
+                    width: 220px;
+                    font-size: 14px;
+                }
+                ::placeholder {
+                    color: lighten($primary, 20) !important;
+                    opacity: 1;
+                }
+                :-ms-input-placeholder {
+                    color: lighten($primary, 20) !important;
+                }
+                ::-ms-input-placeholder {
+                    color: lighten($primary, 20) !important;
+                }
+            }*/
 }
 
 .adminly .header .navbar .dropdown-icon > a {
@@ -20249,49 +20276,12 @@ ADMINLY STYLES
   border-bottom-color: #f5f6f7;
 }
 
-.adminly .header .navbar .dropdown-menu.language:after {
-  border-bottom-color: #f5f6f7;
+.adminly .header .navbar .dropdown-menu.help {
+  width: 385px;
 }
 
-.adminly .header .navbar form .input-group {
-  height: 33px;
-}
-
-.adminly .header .navbar form button {
-  background: none;
-  color: #fff;
-  border: none;
-}
-
-.adminly .header .navbar form input {
-  border: none;
-  background: none;
-  color: #fff;
-  width: 220px;
-  font-size: 14px;
-}
-
-.adminly .header .navbar form ::-webkit-input-placeholder {
-  color: #33b6c7 !important;
-  opacity: 1;
-}
-
-.adminly .header .navbar form ::-ms-input-placeholder {
-  color: #33b6c7 !important;
-  opacity: 1;
-}
-
-.adminly .header .navbar form ::placeholder {
-  color: #33b6c7 !important;
-  opacity: 1;
-}
-
-.adminly .header .navbar form :-ms-input-placeholder {
-  color: #33b6c7 !important;
-}
-
-.adminly .header .navbar form ::-ms-input-placeholder {
-  color: #33b6c7 !important;
+.adminly .header .navbar .dropdown-menu.help form {
+  margin: 20px;
 }
 
 .adminly .header .navbar .avatar-wrapper {
