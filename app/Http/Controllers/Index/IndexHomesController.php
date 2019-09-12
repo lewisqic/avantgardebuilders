@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers\Index;
 
+use App\Models\AdminSetting;
 use App\Models\Pin;
 use App\Http\Controllers\Controller;
 use App\Mail\ContactForm;
@@ -121,6 +122,7 @@ class IndexHomesController extends Controller
         if ( !is_array($result) || !$result['success'] || $result['score'] < 0.5 ) {
             throw new \AppExcp($spam_message);
         }
+        $setting = AdminSetting::where('key', 'email')->first();
 
         $mail_data = [
             'first_name' => $data['first_name'],
@@ -129,7 +131,7 @@ class IndexHomesController extends Controller
             'phone' => $data['phone'],
             'comments' => $data['comments'],
         ];
-        \Mail::to('devinlewis@gmail.com')->send(new ContactForm($mail_data));
+        \Mail::to($setting->value)->send(new ContactForm($mail_data));
 
         return response()->json(['success' => true]);
 

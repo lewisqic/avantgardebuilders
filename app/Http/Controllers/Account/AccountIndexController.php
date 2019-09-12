@@ -3,6 +3,7 @@ namespace App\Http\Controllers\Account;
 
 use App\Models\User;
 use App\Models\Document;
+use App\Models\AdminSetting;
 use Facades\App\Services\DocumentService;
 use App\Http\Controllers\Controller;
 use App\Mail\HelpForm;
@@ -51,14 +52,14 @@ class AccountIndexController extends Controller
     {
 
         $data = \Request::all();
-
+        $setting = AdminSetting::where('key', 'email')->first();
         $mail_data = [
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
             'email' => $data['email'],
             'comments' => $data['comments'],
         ];
-        \Mail::to('devinlewis@gmail.com')->send(new HelpForm($mail_data));
+        \Mail::to($setting->value)->send(new HelpForm($mail_data));
 
         return response()->json(['success' => true]);
 
