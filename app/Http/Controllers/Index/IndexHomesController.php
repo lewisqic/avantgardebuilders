@@ -58,9 +58,24 @@ class IndexHomesController extends Controller
                 'color' => $colors[$pin->year]
             ];
         }
+
+        $plans = [
+        	'Single Story, Basement (1180 SF)',
+			'Single Story, Basement (1445 SF)',
+			'Single Story, Basement (1560 SF)',
+			'Single Story, Basement (1700 SF)',
+			'Single Story, Basement (1900 SF)',
+			'Single Story, Basement (2010 SF)',
+			'Single Story, Basement (2250 SF)',
+			'Single Story, Slab on Grade (3320 SF)',
+			'Two Story, Basement (2215 SF)',
+			'Two Story, Slab on Grade (1350 SF)',
+		];
+
         $data = [
             'pins' => $pins,
             'colors' => $colors,
+			'plans' => $plans,
         ];
         return view('content.index.homes.past-work', $data);
     }

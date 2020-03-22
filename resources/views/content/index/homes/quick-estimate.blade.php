@@ -65,6 +65,14 @@
             </thead>
             <tbody>
                 <tr>
+                    <td>Base Cost</td>
+                    <td class="">$100,000.00</td>
+                    <td></td>
+                    <td class="">$110,000.00</td>
+                    <td></td>
+                    <td class="">$120,000.00</td>
+                </tr>
+                <tr>
                     <td>Finished Sq Ft <small class="finished-text text-muted"></small></td>
                     <td class="finished-low"></td>
                     <td></td>
@@ -146,9 +154,9 @@
             $('.unfinished-mid').html(unfinishedSqFt > 0 ? formatter.format(unfinishedSqFt * unfinished) : '-');
             $('.unfinished-high').html(unfinishedSqFt > 0 ? formatter.format(unfinishedSqFt * unfinished) : '-');
 
-            $('.total-low').html(formatter.format((finishedSqFt * finishedLow) + (unfinishedSqFt * unfinished)));
-            $('.total-mid').html(formatter.format((finishedSqFt * finishedMid) + (unfinishedSqFt * unfinished)));
-            $('.total-high').html(formatter.format((finishedSqFt * finishedHigh) + (unfinishedSqFt * unfinished)));
+            $('.total-low').html(formatter.format(100000 + (finishedSqFt * finishedLow) + (unfinishedSqFt * unfinished)));
+            $('.total-mid').html(formatter.format(110000 + (finishedSqFt * finishedMid) + (unfinishedSqFt * unfinished)));
+            $('.total-high').html(formatter.format(120000 + (finishedSqFt * finishedHigh) + (unfinishedSqFt * unfinished)));
 
             $('.results').show();
         });

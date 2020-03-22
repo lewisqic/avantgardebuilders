@@ -138,4 +138,9 @@ Route::group(['middleware' => ['guest'], 'namespace' => 'Index'], function () {
      */
     Route::get('builders', ['uses' => 'IndexBuildersController@showHome']);
 
+	/**
+	 * Excavators
+	 */
+	Route::get('excavators', ['uses' => 'IndexExcavatorsController@showHome']);
+
 });

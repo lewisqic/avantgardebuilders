@@ -16,15 +16,29 @@
 
     <div class="container content-wrapper">
 
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti deserunt distinctio fuga molestiae omnis perferendis quisquam vitae voluptas voluptatem? A aliquam aperiam asperiores dignissimos, ipsa odit placeat porro repellendus, repudiandae sunt tempore totam!
-        </p>
-
-        <hr>
-
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur doloremque eius eveniet explicabo inventore natus quae quam sapiente sed!
-        </p>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="mx-3">
+                    <h4 class="text-ag">New Construction</h4>
+                    <img src="{{ url('images/new-construction.jpg') }}" alt="" class="img-thumbnail w-100 my-3">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias autem consectetur eligendi facilis ipsam iusto, maxime nesciunt quidem sunt!</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="mx-3">
+                    <h4 class="text-ag">Custom Plans</h4>
+                    <img src="{{ url('images/custom-plans.jpg') }}" alt="" class="img-thumbnail w-100 my-3">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis debitis deleniti facere fugiat harum illo mollitia quod reiciendis, sapiente vitae?</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="mx-3">
+                    <h4 class="text-ag">Estimates</h4>
+                    <img src="{{ url('images/estimate.jpg') }}" alt="" class="img-thumbnail w-100 my-3">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A commodi consequuntur culpa, esse est eum odit perferendis quibusdam quod repellendus.</p>
+                </div>
+            </div>
+        </div>
 
     </div>
 

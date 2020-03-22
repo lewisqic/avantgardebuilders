@@ -456,6 +456,11 @@ PAGE LAYOUT
         &.builders-home {
             background: url(/images/builders-home-heading.jpg) -180px -60px no-repeat;
         }
+
+        &.excavators-home {
+            background: url(/images/excavators-home-heading.jpg) -350px -100px no-repeat;
+        }
+
     }
 
     .content-wrapper {
@@ -487,12 +492,21 @@ PAGE LAYOUT
             background-size: cover;
         }
 
+        &.excavators {
+            background: url(/images/option-excavators.jpg) -100px 0 no-repeat;
+            background-size: cover;
+        }
+
         h2, p, span {
             display: block;
             padding: 15px 30px;
             background: rgba(0, 0, 0, 0.6);
             z-index: 99;
             position: relative;
+        }
+
+        & > p {
+            min-height: 105px;
         }
 
         h2 {
@@ -585,10 +599,11 @@ PAGE LAYOUT
     .footer {
         background: #606D6D;
         color: #fff;
-        padding: 10px;
+        padding: 15px;
         margin-top: 0;
         color: #ccc;
         font-size: 14px;
+        margin-bottom: 10px;
     }
 }
 

@@ -21718,6 +21718,10 @@ PAGE LAYOUT
   background: url(/images/builders-home-heading.jpg) -180px -60px no-repeat;
 }
 
+.public .page-heading.excavators-home {
+  background: url(/images/excavators-home-heading.jpg) -350px -100px no-repeat;
+}
+
 .public .content-wrapper {
   margin-top: 60px;
   margin-bottom: 60px;
@@ -21748,6 +21752,11 @@ PAGE LAYOUT
   background-size: cover;
 }
 
+.public .landing-option.excavators {
+  background: url(/images/option-excavators.jpg) -100px 0 no-repeat;
+  background-size: cover;
+}
+
 .public .landing-option h2,
 .public .landing-option p,
 .public .landing-option span {
@@ -21756,6 +21765,10 @@ PAGE LAYOUT
   background: rgba(0, 0, 0, 0.6);
   z-index: 99;
   position: relative;
+}
+
+.public .landing-option > p {
+  min-height: 105px;
 }
 
 .public .landing-option h2 {
@@ -21846,10 +21859,11 @@ PAGE LAYOUT
 .public .footer {
   background: #606D6D;
   color: #fff;
-  padding: 10px;
+  padding: 15px;
   margin-top: 0;
   color: #ccc;
   font-size: 14px;
+  margin-bottom: 10px;
 }
 
 /*************************************************

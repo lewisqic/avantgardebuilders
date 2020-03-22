@@ -16,14 +16,24 @@
 
     <div class="container content-wrapper">
 
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti deserunt distinctio fuga molestiae omnis perferendis quisquam vitae voluptas voluptatem? A aliquam aperiam asperiores dignissimos, ipsa odit placeat porro repellendus, repudiandae sunt tempore totam!
-        </p>
-
-        <hr>
+        <h4 class="text-ag">
+            Homes built by Avant-Garde Builders
+        </h4>
 
         <div id="map"></div>
         <div id="legend"><h3>Legend</h3></div>
+
+        <hr class="mt-5">
+
+        <h4 class="text-ag mt-5">House Plan Archive</h4>
+
+        <div class="row">
+            @foreach ($plans as $plan)
+            <div class="col-sm-3 mb-5">
+                <a href="{{ url('library/' . $plan . '.pdf') }}" target="_blank"><img src="{{ url('library/' . $plan . '.jpg') }}" class="w-100"></a>
+            </div>
+            @endforeach
+        </div>
 
     </div>
 

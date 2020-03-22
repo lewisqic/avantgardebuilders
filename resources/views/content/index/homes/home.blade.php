@@ -42,8 +42,9 @@
 
         <h3 class="text-center">What Makes Us Different?</h3>
 
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis debitis quos veniam? A dicta minus nam nemo nihil non odit officiis optio possimus recusandae repellendus sed similique, suscipit tempore voluptatibus!  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis debitis quos veniam? A dicta minus nam nemo nihil non odit officiis optio possimus recusandae repellendus sed similique, suscipit tempore voluptatibus!
+        <p class="text-center">
+            Once we provide you with a bid for your home, we guarantee it will not go over budget unless you make a change and approve the increase.<br>
+            Additionally, we strive to do whatever it takes to ensure a timely building process that results in a house that is everything you wanted and more to finally bring you home.
         </p>
 
     </div>
@@ -52,8 +53,7 @@
         <div class="container">
             <h2>Mission Statement / Our Guarantee</h2>
             <p>
-                <em>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A atque cumque eum labore tempora! Atque cum distinctio ducimus<br>
-                    esse et ex magni minima minus, nostrum porro possimus quasi quidem repudiandae rerum sapiente sit tenetur.</em>
+                <em>To maintain the highest levels of professionalism, integrity, honesty and fairness in our relationships with our suppliers, subcontractors, professional associates and customers.</em>
             </p>
         </div>
     </div>

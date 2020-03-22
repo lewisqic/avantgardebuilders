@@ -16,15 +16,26 @@
 
     <div class="container content-wrapper">
 
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti deserunt distinctio fuga molestiae omnis perferendis quisquam vitae voluptas voluptatem? A aliquam aperiam asperiores dignissimos, ipsa odit placeat porro repellendus, repudiandae sunt tempore totam!
-        </p>
-
-        <hr>
-
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur doloremque eius eveniet explicabo inventore natus quae quam sapiente sed!
-        </p>
+        <div class="row">
+            <div class="col-sm-4">
+                <h4 class="text-ag">Example Estimate</h4>
+                <hr>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias autem consectetur eligendi facilis ipsam iusto, maxime nesciunt quidem sunt!</p>
+                <a href="{{ url('library/Example Estimate.pdf') }}" target="_blank" class="btn btn-sm btn-primary"><i class="fal fa-download"></i> Download</a>
+            </div>
+            <div class="col-sm-4">
+                <h4 class="text-ag">Trim Questionnaire</h4>
+                <hr>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis debitis deleniti facere fugiat harum illo mollitia quod reiciendis, sapiente vitae?</p>
+                <a href="{{ url('library/Trim Questionaire.docx') }}" target="_blank" class="btn btn-sm btn-primary"><i class="fal fa-download"></i> Download</a>
+            </div>
+            <div class="col-sm-4">
+                <h4 class="text-ag">Project Questionnaire</h4>
+                <hr>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A commodi consequuntur culpa, esse est eum odit perferendis quibusdam quod repellendus.</p>
+                <a href="{{ url('library/Project Questionnaire.docx') }}" target="_blank" class="btn btn-sm btn-primary"><i class="fal fa-download"></i> Download</a>
+            </div>
+        </div>
 
     </div>
 

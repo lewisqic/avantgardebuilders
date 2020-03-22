@@ -15,11 +15,13 @@
     <div class="container">
         <div class="my-7">
             <h4 class="font-weight-normal text-center text-muted">
-                Website Under Construction
+                Premier Large Scale Construction Projects.
+                <br>
+                Licensed in Utah, Arizona, Idaho, South Dakota and North Dakota.
             </h4>
             <hr>
             <p class="text-center">
-                Please try again later.
+                Website under construction, please try again later.
             </p>
         </div>
     </div>

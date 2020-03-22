@@ -16,15 +16,38 @@
 
     <div class="container content-wrapper">
 
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti deserunt distinctio fuga molestiae omnis perferendis quisquam vitae voluptas voluptatem? A aliquam aperiam asperiores dignissimos, ipsa odit placeat porro repellendus, repudiandae sunt tempore totam!
-        </p>
-
-        <hr>
-
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur doloremque eius eveniet explicabo inventore natus quae quam sapiente sed!
-        </p>
+        <div class="row text-center">
+            <div class="col-sm-3 mb-5">
+                <h4 class="text-ag">Kelso Plumbing</h4>
+            </div>
+            <div class="col-sm-3 mb-5">
+                <h4 class="text-ag">Parkside Concrete</h4>
+            </div>
+            <div class="col-sm-3 mb-5">
+                <h4 class="text-ag">MKJ Excavating</h4>
+            </div>
+            <div class="col-sm-3 mb-5">
+                <h4 class="text-ag">Innovation Electric</h4>
+            </div>
+            <div class="col-sm-3 mb-5">
+                <h4 class="text-ag">TBH</h4>
+            </div>
+            <div class="col-sm-3 mb-5">
+                <h4 class="text-ag">No Limit</h4>
+            </div>
+            <div class="col-sm-3 mb-5">
+                <h4 class="text-ag">Pro-Edge</h4>
+            </div>
+            <div class="col-sm-3 mb-5">
+                <h4 class="text-ag">Brian Young Construction</h4>
+            </div>
+            <div class="col-sm-3 mb-5">
+                <h4 class="text-ag">Mountain Valley Woodwork</h4>
+            </div>
+            <div class="col-sm-3 mb-5">
+                <h4 class="text-ag">Level One Flooring</h4>
+            </div>
+        </div>
 
     </div>
 

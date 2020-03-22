@@ -1,13 +1,21 @@
 <div class="footer">
-    <div class="container">
+    <div class="container text-center">
 
-        <div class="row">
-            <div class="col-sm-6">
-                Copyright &copy; {{ date('Y') }} Avant-Garde Builders, All Rights Reserved
+        <div class="row font-18">
+            <div class="col-sm-12">
+                <div>1125 Blackhawk Blvd, Mount Pleasant, UT 84647</div>
+
+                <div>
+                    <span>Jeff Strange Project Manager Homes: 435-262-7181</span>
+                    <span class="ml-4">Avant-Garde Builders Office: 435-462-9782</span>
+                </div>
+
             </div>
-            <div class="col-sm-6 text-right">
-                123 Fake Street, Mount Pleasant, UT
-                <span class="ml-4">800-123-4567</span>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-sm-12">
+                Copyright &copy; {{ date('Y') }} Avant-Garde Builders, All Rights Reserved
             </div>
         </div>
 

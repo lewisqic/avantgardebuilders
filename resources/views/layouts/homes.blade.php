@@ -21,7 +21,7 @@
         </div>
         <nav class="navbar navbar-expand-lg navbar-light">
             <a href="{{ url('homes') }}" class="navbar-brand">
-                <img src="{{ url('images/ag-homes.jpg') }}" alt="">
+                <img src="{{ url('images/ag-logo.png') }}" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header_nav" aria-controls="header_nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -57,7 +57,21 @@
 
 @yield('content')
 
-@include('partials.index.footer');
+<div class="footer">
+    <div class="container text-center">
+        <div class="row font-18">
+            <div class="col-sm-12">
+                <div>1125 Blackhawk Blvd, Mount Pleasant, UT 84647</div>
+                <div>
+                    <span>Jeff Strange Project Manager Homes: 435-262-7181</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-3 text-center text-muted font-14 mb-2">
+    Copyright &copy; {{ date('Y') }} Avant-Garde Builders, All Rights Reserved
+</div>
 
 {!! Js::config(true) !!}
 <script src="{{ url('js/vendor.js') }}"></script>
