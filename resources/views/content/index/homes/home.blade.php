@@ -17,7 +17,7 @@
         <div class="row home-tiles">
             <div class="col-sm-4" data-href="{{ url('homes/what-we-do') }}">
                 <div class="img-wrapper cad">
-                    <h5>Our Services</h5>
+                    <h5>What We Do</h5>
                     <img src="{{ url('images/home-services.jpg') }}" alt="">
                 </div>
                 From custom house plans to general contracting, find out what we can do for you.

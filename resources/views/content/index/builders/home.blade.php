@@ -21,7 +21,7 @@
             </h4>
             <hr>
             <p class="text-center">
-                Website under construction, please try again later.
+                Please contact us for details.
             </p>
         </div>
     </div>

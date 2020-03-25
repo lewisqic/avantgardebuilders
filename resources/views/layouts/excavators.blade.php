@@ -15,11 +15,8 @@
 <div class="header">
 	<div class="container">
 
-		<div class="visit">
-			<a href="{{ url('') }}"><i class="fal fa-angle-double-left"></i> Visit Homes</a>
-		</div>
 		<nav class="navbar navbar-expand-lg navbar-light">
-			<a href="{{ url('excavators') }}" class="navbar-brand">
+			<a href="{{ url('') }}" class="navbar-brand">
 				<img src="{{ url('images/ag-logo.png') }}" alt="">
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header_nav" aria-controls="header_nav" aria-expanded="false" aria-label="Toggle navigation">

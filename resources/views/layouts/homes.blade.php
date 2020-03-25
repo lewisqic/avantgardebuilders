@@ -16,11 +16,8 @@
 <div class="header">
     <div class="container">
 
-        <div class="visit">
-            <a href="{{ url('') }}"><i class="fal fa-angle-double-left"></i> Visit Builders</a>
-        </div>
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a href="{{ url('homes') }}" class="navbar-brand">
+            <a href="{{ url('') }}" class="navbar-brand">
                 <img src="{{ url('images/ag-logo.png') }}" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header_nav" aria-controls="header_nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,8 +25,8 @@
             </button>
             <div class="collapse navbar-collapse" id="header_nav">
                 <ul class="navbar-nav ml-7">
-                    <li class="nav-item {{ \Request::is('homes/what-we-do') ? 'active' : '' }}">
-                        <a href="{{ url('homes/what-we-do') }}" class="nav-link">What We Do</a>
+                    <li class="nav-item {{ \Request::is('homes') ? 'active' : '' }}">
+                        <a href="{{ url('homes') }}" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item {{ \Request::is('homes/past-work') ? 'active' : '' }}">
                         <a href="{{ url('homes/past-work') }}" class="nav-link">Past Work</a>

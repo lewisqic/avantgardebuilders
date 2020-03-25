@@ -23,18 +23,6 @@
         <div id="map"></div>
         <div id="legend"><h3>Legend</h3></div>
 
-        <hr class="mt-5">
-
-        <h4 class="text-ag mt-5">House Plan Archive</h4>
-
-        <div class="row">
-            @foreach ($plans as $plan)
-            <div class="col-sm-3 mb-5">
-                <a href="{{ url('library/' . $plan . '.pdf') }}" target="_blank"><img src="{{ url('library/' . $plan . '.jpg') }}" class="w-100"></a>
-            </div>
-            @endforeach
-        </div>
-
     </div>
 
 
