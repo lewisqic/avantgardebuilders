@@ -23,7 +23,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="header_nav">
-                <ul class="navbar-nav ml-auto">
+                {{--<ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('homes') }}">Homes</a>
                     </li>
@@ -33,7 +33,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('excavators') }}">Excavators</a>
                     </li>
-                </ul>
+                </ul>--}}
             </div>
         </nav>
 
