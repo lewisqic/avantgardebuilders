@@ -30,13 +30,13 @@
                 <h4 class="text-ag">Innovation Electric</h4>
             </div>
             <div class="col-sm-3 mb-5">
-                <h4 class="text-ag">TBH</h4>
+                <h4 class="text-ag">TBH Heating & Air</h4>
             </div>
             <div class="col-sm-3 mb-5">
-                <h4 class="text-ag">No Limit</h4>
+                <h4 class="text-ag">No Limit Drywall & Stucco</h4>
             </div>
             <div class="col-sm-3 mb-5">
-                <h4 class="text-ag">Pro-Edge</h4>
+                <h4 class="text-ag">Pro-Edge Siding & Roofing</h4>
             </div>
             <div class="col-sm-3 mb-5">
                 <h4 class="text-ag">Brian Young Construction</h4>
@@ -46,6 +46,9 @@
             </div>
             <div class="col-sm-3 mb-5">
                 <h4 class="text-ag">Level One Flooring</h4>
+            </div>
+            <div class="col-sm-3 mb-5">
+                <h4 class="text-ag">Horseshoe Mountain Hardware</h4>
             </div>
         </div>
 

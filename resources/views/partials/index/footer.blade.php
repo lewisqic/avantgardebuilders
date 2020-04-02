@@ -6,7 +6,7 @@
                 <div>1125 Blackhawk Blvd, Mount Pleasant, UT 84647</div>
 
                 <div>
-                    <span>Jeff Strange Project Manager Homes: 435-262-7181</span>
+                    <span>Project Manager: Jeff Strange</span>
                     <span class="ml-4">Avant-Garde Builders Office: 435-462-9782</span>
                 </div>
 

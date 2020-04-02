@@ -60,7 +60,7 @@
             <div class="col-sm-12">
                 <div>1125 Blackhawk Blvd, Mount Pleasant, UT 84647</div>
                 <div>
-                    <span>Jeff Strange Project Manager Homes: 435-262-7181</span>
+                    <span>Project Manager: Jeff Strange</span>
                 </div>
             </div>
         </div>

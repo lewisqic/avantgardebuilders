@@ -25,7 +25,7 @@
                     <p class="font-18 mb-5">Whether inquiring about the services we have to offer, touching base on an existing job, or just saying hello, we'd love to hear from you!</p>
 
                     <div class="font-20 text-muted mb-3">
-                        <i class="fa fa-phone text-black mr-3"></i> 435-262-7181
+                        <i class="fa fa-phone text-black mr-3"></i> 435-462-9782
                     </div>
                     <div class="font-20 text-muted">
                         <i class="fa fa-map-marker text-black ml-1 mr-3"></i> 1125 Blackhawk Blvd<br><span style="margin-left: 42px;">Mount Pleasant, UT 84647</span>

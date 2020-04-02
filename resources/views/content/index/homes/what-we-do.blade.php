@@ -42,7 +42,10 @@
 
         <hr>
 
-        <h4 class="text-ag mt-5">House Plan Archive</h4>
+        <h4 class="text-ag mt-5">
+            House Plan Archive
+            <small>(<a href="https://siteserv.egnyte.com/fl/8TGsjocKK8" target="_blank">click here</a> to view our complete house plan repository)</small>
+        </h4>
 
         <div class="row">
             @foreach ($plans as $plan)

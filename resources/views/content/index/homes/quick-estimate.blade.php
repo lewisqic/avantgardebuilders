@@ -100,7 +100,7 @@
         </table>
 
         <p class="mt-3 font-14 text-muted">
-            * Whether you fall within the low, mid or high pricing tier is determined by the grade and quality of options/features that you choose.
+            * Whether you fall within the low, mid or high pricing tier is determined by the grade and trim of options/features that you choose.
             <br>
             * This tool is meant to give a rough estimate only.  To receive an official estimate for your house, please contact us.
         </p>
