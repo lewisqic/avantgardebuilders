@@ -130,10 +130,10 @@
             minimumFractionDigits: 2
         });
 
-        var finishedLow = 58;
-        var finishedMid = 68;
-        var finishedHigh = 74;
-        var unfinished = 30;
+        var finishedLow = 61;
+        var finishedMid = 72;
+        var finishedHigh = 80;
+        var unfinished = 31;
 
 
         $(window).on('quick_estimate_form.validationSuccess', function(e, obj) {
