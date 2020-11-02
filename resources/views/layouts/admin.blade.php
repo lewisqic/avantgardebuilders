@@ -92,9 +92,14 @@
                         <li class="{{ \Request::is('admin/documents*') ? 'active' : '' }}"><a href="{{ url('admin/documents') }}">Documents</a></li>
                     @endif
 
-                    {{-- Documents --}}
+                    {{-- Map Pins --}}
                     @if ( has_permission('admin.pins.index') )
                         <li class="{{ \Request::is('admin/pins*') ? 'active' : '' }}"><a href="{{ url('admin/pins') }}">Map Pins</a></li>
+                    @endif
+
+                    {{-- Calendar --}}
+                    @if ( has_permission('admin.members.index') )
+                        <li class="{{ \Request::is('admin/calendar*') ? 'active' : '' }}"><a href="{{ url('admin/calendar') }}">Calendar</a></li>
                     @endif
 
                     {{-- System --}}

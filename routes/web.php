@@ -53,6 +53,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin'], 'namespace' =
     Route::get('pins/data', ['uses' => 'AdminPinController@dataTables']);
     Route::resource('pins', 'AdminPinController', ['as' => 'admin']);
 
+	// calendar
+	Route::get('calendar/data', ['uses' => 'AdminCalendarEventController@dataTables']);
+	Route::resource('calendar', 'AdminCalendarEventController', ['as' => 'admin']);
+
     // member roles
     //Route::get('member-roles/data', ['uses' => 'AdminMemberRoleController@dataTables']);
     //Route::patch('member-roles/{id}', ['uses' => 'AdminMemberRoleController@restore'])->name('admin.member-roles.restore');

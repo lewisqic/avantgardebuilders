@@ -49,7 +49,9 @@ class BaseModel extends Model
         'canceled_at',
         'created_at',
         'updated_at',
-        'deleted_at'
+        'deleted_at',
+		'start_at',
+		'end_at',
     ];
 
     /**

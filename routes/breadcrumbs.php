@@ -90,6 +90,28 @@
     $trail->push('Edit', url('admin/pins/edit/' . $pin->id));
 });
 
+// calendar
+\Breadcrumbs::for('admin/calendar', function($trail)
+{
+	$trail->parent('admin');
+	$trail->push('Calendar', url('admin/calendar'));
+});
+\Breadcrumbs::for('admin/calendar/create', function($trail)
+{
+	$trail->parent('admin/calendar');
+	$trail->push('Create', url('admin/calendar/create'));
+});
+\Breadcrumbs::for('admin/calendar/show', function($trail, $event)
+{
+	$trail->parent('admin/calendar');
+	$trail->push($event->title, url('admin/calendar/' . $event->id));
+});
+\Breadcrumbs::for('admin/calendar/edit', function($trail, $event)
+{
+	$trail->parent('admin/calendar/show', $event);
+	$trail->push('Edit', url('admin/calendar/edit/' . $event->id));
+});
+
 // documents
 \Breadcrumbs::for('admin/documents', function($trail)
 {
