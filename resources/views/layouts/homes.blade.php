@@ -31,6 +31,9 @@
                     <li class="nav-item {{ \Request::is('homes/past-work') ? 'active' : '' }}">
                         <a href="{{ url('homes/past-work') }}" class="nav-link">Past Work</a>
                     </li>
+                    <li class="nav-item {{ \Request::is('homes/calendar') ? 'active' : '' }}">
+                        <a href="{{ url('homes/calendar') }}" class="nav-link">Calendar</a>
+                    </li>
                     <li class="nav-item {{ \Request::is('homes/our-partners') ? 'active' : '' }}">
                         <a href="{{ url('homes/our-partners') }}" class="nav-link">Our Partners</a>
                     </li>
@@ -43,7 +46,7 @@
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a href="{{ url('auth/login') }}" class="nav-link font-16"><i class="fal fa-lock"></i> Client Login</a>
+                        <a href="{{ url('auth/login') }}" class="nav-link font-16"><i class="fal fa-lock"></i> Login</a>
                     </li>
                 </ul>
             </div>

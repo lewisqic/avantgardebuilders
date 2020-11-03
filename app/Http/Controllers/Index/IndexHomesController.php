@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\Index;
 
 use App\Models\AdminSetting;
+use App\Models\CalendarEvent;
 use App\Models\Pin;
 use App\Http\Controllers\Controller;
 use App\Mail\ContactForm;
@@ -91,6 +92,42 @@ class IndexHomesController extends Controller
     {
         return view('content.index.homes.our-partners');
     }
+
+	/**
+	 * Show the our calendar page
+	 *
+	 * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+	 */
+	public function showCalendar()
+	{
+		$settings = [];
+		foreach ( AdminSetting::all() as $setting ) {
+			if ($setting->tab == 'Calendar') {
+				$settings[$setting->key] = $setting->toArray();
+			}
+		}
+		$events = [];
+		foreach ( CalendarEvent::where('is_active', true)->get() as $event ) {
+			$event = $event->toArray();
+			$event['start_at'] = date('Y-m-d', strtotime($event['start_at']));
+			$event['end_at'] = date('Y-m-d', strtotime($event['end_at']));
+			$events[] = $event;
+		}
+		$data = [
+			'settings' => $settings,
+			'events' => $events
+		];
+		return view('content.index.homes.calendar', $data);
+	}
+
+	/**
+	 * Serve the calendar event data
+	 *
+	 * @return json
+	 */
+	public function getCalendarEvents()
+	{
+	}
 
     /**
      * Show the about us page
