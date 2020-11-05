@@ -72,6 +72,7 @@
         .fc-h-event {
             border: 1px solid #A59E8C;
             background-color: #A59E8C;
+            font-size: 12px;
         }
         .fc-h-event:hover {
 			cursor: pointer;
