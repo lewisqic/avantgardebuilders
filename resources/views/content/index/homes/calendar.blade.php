@@ -80,8 +80,6 @@
 			position: absolute;
             z-index: 9999;
             background: rgba(0, 0, 0, 0.8);
-			max-width: 400px;
-			height: 100px;
 			overflow: hidden;
 			color: #fff;
             font-size: 14px;
