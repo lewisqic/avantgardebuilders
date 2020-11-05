@@ -73,6 +73,21 @@
             border: 1px solid #A59E8C;
             background-color: #A59E8C;
         }
+        .fc-h-event:hover {
+			cursor: pointer;
+		}
+		.event-description {
+			position: absolute;
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.8);
+			max-width: 400px;
+			height: 100px;
+			overflow: hidden;
+			color: #fff;
+            font-size: 14px;
+			padding: 5px 15px;
+			border-radius: 4px;
+		}
 	</style>
 @endpush
 @push('scripts')
@@ -83,13 +98,24 @@
 			var calendar = new FullCalendar.Calendar(calendarEl, {
 				initialView: 'dayGridMonth',
 				height: 'auto',
+				eventMouseEnter: function(mouseEnterInfo) {
+					let description = mouseEnterInfo.event.extendedProps.description;
+					let top = parseFloat(mouseEnterInfo.jsEvent.pageY) + 10;
+					let left = mouseEnterInfo.jsEvent.pageX;
+					if (description) {
+						$('body').append('<div class="event-description" style="top: ' + top + 'px; left: ' + left + 'px;">' + mouseEnterInfo.event.title + '<br>' + description + '</div>');
+					}
+				},
+				eventMouseLeave: function(mouseEnterInfo) {
+					$('.event-description').remove();
+				},
 				events: [
 					@foreach ($events as $event)
 					{
 						title: '{{ strtoupper($event['title']) }} ({{ date('M jS, Y', strtotime($event['start_at'])) }} - {{ date('M jS, Y', strtotime($event['end_at'])) }})',
+						description: '{{ $event['description'] }}',
 						start: '{{ $event['start_at'] }}',
 						end: '{{ $event['end_at'] }}',
-						displayEventTime: false,
 					},
 					@endforeach
 				]
