@@ -66,11 +66,11 @@
             <tbody>
                 <tr>
                     <td>Base Cost</td>
-                    <td class="">$100,000.00</td>
+                    <td class="">{{ \Format::currency($settings['base_low']['value']) }}</td>
                     <td></td>
-                    <td class="">$110,000.00</td>
+                    <td class="">{{ \Format::currency($settings['base_mid']['value']) }}</td>
                     <td></td>
-                    <td class="">$120,000.00</td>
+                    <td class="">{{ \Format::currency($settings['base_high']['value']) }}</td>
                 </tr>
                 <tr>
                     <td>Finished Sq Ft <small class="finished-text text-muted"></small></td>
@@ -134,6 +134,9 @@
         var finishedMid = {{ $settings['finished_mid']['value'] }};
         var finishedHigh = {{ $settings['finished_high']['value'] }};
         var unfinished = {{ $settings['unfinished']['value'] }};
+        var baseLow = {{ $settings['base_low']['value'] }};
+        var baseMid = {{ $settings['base_mid']['value'] }};
+        var baseHigh = {{ $settings['base_high']['value'] }};
 
 
         $(window).on('quick_estimate_form.validationSuccess', function(e, obj) {
@@ -154,9 +157,9 @@
             $('.unfinished-mid').html(unfinishedSqFt > 0 ? formatter.format(unfinishedSqFt * unfinished) : '-');
             $('.unfinished-high').html(unfinishedSqFt > 0 ? formatter.format(unfinishedSqFt * unfinished) : '-');
 
-            $('.total-low').html(formatter.format(100000 + (finishedSqFt * finishedLow) + (unfinishedSqFt * unfinished)));
-            $('.total-mid').html(formatter.format(110000 + (finishedSqFt * finishedMid) + (unfinishedSqFt * unfinished)));
-            $('.total-high').html(formatter.format(120000 + (finishedSqFt * finishedHigh) + (unfinishedSqFt * unfinished)));
+            $('.total-low').html(formatter.format(baseLow + (finishedSqFt * finishedLow) + (unfinishedSqFt * unfinished)));
+            $('.total-mid').html(formatter.format(baseMid + (finishedSqFt * finishedMid) + (unfinishedSqFt * unfinished)));
+            $('.total-high').html(formatter.format(baseHigh + (finishedSqFt * finishedHigh) + (unfinishedSqFt * unfinished)));
 
             $('.results').show();
         });
