@@ -198,7 +198,13 @@ class IndexHomesController extends Controller
      */
     public function showQuickEstimate()
     {
-        return view('content.index.homes.quick-estimate');
+		$settings = [];
+		foreach ( AdminSetting::all() as $setting ) {
+			if ($setting->tab == 'Calculator') {
+				$settings[$setting->key] = $setting->toArray();
+			}
+		}
+        return view('content.index.homes.quick-estimate', ['settings' => $settings]);
     }
 
     /**
