@@ -90,7 +90,7 @@ class DocumentService extends BaseService
             $documents_arr[] = [
                 'id' => $document->id,
                 'class' => !is_null($document->deleted_at) ? 'text-danger' : null,
-                'user' => $document->user->name,
+                'user' => $document->user ? $document->user->name : '',
                 'label' => $document->label,
                 'type' => $document->type,
                 'filename' => $document->filename,

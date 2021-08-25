@@ -16,41 +16,72 @@
 
 	<div class="container content-wrapper">
 
-		<div class="row">
-			<div class="col-sm-8">
-				<div id="calendar"></div>
-			</div>
-			<div class="col-sm-4">
-				<div class="qualifications-wrapper">
-					<h4>List of Qualifications:</h4>
-					@if (!empty($settings['qualifications']['value']))
-						<p class="text-muted">To get on the schedule, you must meet the qualifications listed below.</p>
-						{!! nl2br($settings['qualifications']['value']) !!}
-					@else
-						<em>none</em>
-					@endif
+		<ul class="nav nav-tabs hash-tabs page-tabs" role="tablist">
+			<li class="nav-item">
+				<a class="nav-link active" data-toggle="tab" href="#owners" role="tab">Home Owners</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="tab" href="#contractors" role="tab">Contractors</a>
+			</li>
+		</ul>
+
+		<div class="tab-content page-tabs-content">
+			<div class="tab-pane fade show active" id="owners" role="tabpanel">
+
+				<div class="row">
+					<div class="col-sm-8">
+						<div id="calendar"></div>
+					</div>
+					<div class="col-sm-4">
+						<div class="qualifications-wrapper">
+							<h4>List of Qualifications:</h4>
+							@if (!empty($settings['qualifications']['value']))
+								<p class="text-muted">To get on the schedule, you must meet the qualifications listed below.</p>
+								{!! nl2br($settings['qualifications']['value']) !!}
+							@else
+								<em>none</em>
+							@endif
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
 
-		<hr class="my-5">
+				<hr class="my-5">
 
-		<div class="row">
-			<div class="col-sm-6">
-				<h4>Project Plans in Progress:</h4>
-				@if (!empty($settings['plans_in_progress']['value']))
-					{!! nl2br($settings['plans_in_progress']['value']) !!}
-				@else
-					<em>none</em>
-				@endif
+				<div class="row">
+					<div class="col-sm-6">
+						<h4>Project Plans in Progress:</h4>
+						@if (!empty($settings['plans_in_progress']['value']))
+							{!! nl2br($settings['plans_in_progress']['value']) !!}
+						@else
+							<em>none</em>
+						@endif
+					</div>
+					<div class="col-sm-6">
+						<h4>Project Estimates in Progress:</h4>
+						@if (!empty($settings['estimates_in_progress']['value']))
+							{!! nl2br($settings['estimates_in_progress']['value']) !!}
+						@else
+							<em>none</em>
+						@endif
+					</div>
+				</div>
+
 			</div>
-			<div class="col-sm-6">
-				<h4>Project Estimates in Progress:</h4>
-				@if (!empty($settings['estimates_in_progress']['value']))
-					{!! nl2br($settings['estimates_in_progress']['value']) !!}
-				@else
-					<em>none</em>
+			<div class="tab-pane fade" id="contractors" role="tabpanel">
+
+				@if ($documents->isEmpty())
+					<div class="text-center text-muted">
+						<em>No documents found</em>
+					</div>
 				@endif
+
+				@foreach ($documents as $document)
+					<div>
+						<strong>{{ $document->label }}</strong> ({{ $document->filename }}) <a href="{{ url('homes/calendar/download/' . $document->id) }}"><i class="fal fa-download ml-3"></i> Download</a>
+					</div>
+					<hr>
+				@endforeach
+
 			</div>
 		</div>
 

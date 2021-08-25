@@ -28,7 +28,6 @@ class Document extends BaseModel
      */
     protected $rules = [
         'label'    => 'required',
-        'user_id'  => 'required',
         'type'     => 'required',
     ];
 

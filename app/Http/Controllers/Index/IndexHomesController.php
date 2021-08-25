@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Index;
 use App\Models\AdminSetting;
 use App\Models\CalendarEvent;
 use App\Models\Pin;
+use App\Models\Document;
 use App\Http\Controllers\Controller;
 use App\Mail\ContactForm;
 
@@ -113,11 +114,26 @@ class IndexHomesController extends Controller
 			$event['end_at'] = date('Y-m-d', strtotime($event['end_at']));
 			$events[] = $event;
 		}
+		
+		$documents = Document::where('type', 'Contractor Schedule')->get();
+		
 		$data = [
 			'settings' => $settings,
-			'events' => $events
+			'events' => $events,
+			'documents' => $documents
 		];
 		return view('content.index.homes.calendar', $data);
+	}
+
+	/**
+	 * Download a document
+	 *
+	 * @return null
+	 */
+	public function downloadDocument($id)
+	{
+		$document = Document::findOrFail($id);
+		return response()->download(storage_path('app/public/' . $document->path), $document->filename);
 	}
 
 	/**
