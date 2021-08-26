@@ -23,7 +23,7 @@
                 <div class="col-sm-9">
                     <select name="type" class="form-control" data-fv-notempty="true">
                         <option value="">- select type -</option>
-                        <option value="Contractor Schedule">Contractor Schedule</option>
+                        <option value="Contractor Schedule" {{ isset($document) && $document->type == 'Contractor Schedule' ? 'selected' : '' }}>Contractor Schedule</option>
                         @foreach ( $types as $type )
                             <option value="{{ $type }}" {{ isset($document) && $document->type == $type ? 'selected' : '' }}>{{ $type }}</option>
                         @endforeach
@@ -40,6 +40,13 @@
                         <option value="{{ $user->id }}" {{ isset($document) && $document->user_id == $user->id ? 'selected' : '' }}>{{ $user->name }}</option>
                         @endforeach
                     </select>
+                </div>
+            </div>
+
+            <div class="form-group row order-wrapper" style="{{ isset($document) && $document->type == 'Contractor Schedule' ? '' : 'display: none;' }}">
+                <label class="col-form-label col-sm-3">Sort Order</label>
+                <div class="col-sm-9">
+                    <input type="text" name="order" class="form-control" placeholder="Sort Order" value="{{ $document->order ?? old('order') }}">
                 </div>
             </div>
 
@@ -90,8 +97,10 @@
             if ($('[name="type"] option:selected').val() === 'Contractor Schedule') {
                 $('.client-wrapper').hide();
                 $('[name="user_id"]').val('');
+                $('.order-wrapper').show();
             } else {
                 $('.client-wrapper').show();
+                $('.order-wrapper').hide();
             }
         });
     </script>

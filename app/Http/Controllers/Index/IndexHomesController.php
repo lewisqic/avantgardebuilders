@@ -115,7 +115,7 @@ class IndexHomesController extends Controller
 			$events[] = $event;
 		}
 		
-		$documents = Document::where('type', 'Contractor Schedule')->get();
+		$documents = Document::where('type', 'Contractor Schedule')->orderBy('order', 'asc')->get();
 		
 		$data = [
 			'settings' => $settings,

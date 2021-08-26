@@ -18,7 +18,7 @@ class Document extends BaseModel
      * @var array
      */
     protected $fillable = [
-        'label', 'user_id', 'type', 'filename', 'path'
+        'label', 'user_id', 'order', 'type', 'filename', 'path'
     ];
 
     /**
