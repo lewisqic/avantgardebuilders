@@ -52,8 +52,16 @@
             </div>
         </div>
 
-        <table class="table table-striped results mt-5 hide">
-            <thead>
+        <div class="results hide">
+
+            @if (!empty($settings['last_update']['value']))
+                <div class="alert alert-primary mt-3" role="alert">
+                    Last calculator cost update was <strong>{{ $settings['last_update']['value'] }}</strong>. The calculator reflects numbers based on the last updated cost.
+                </div>
+            @endif
+
+            <table class="table table-striped mt-5">
+                <thead>
                 <tr>
                     <td></td>
                     <td>Low Pricing</td>
@@ -62,8 +70,8 @@
                     <td></td>
                     <td>High Pricing</td>
                 </tr>
-            </thead>
-            <tbody>
+                </thead>
+                <tbody>
                 <tr>
                     <td>Base Cost</td>
                     <td class="">{{ \Format::currency($settings['base_low']['value']) }}</td>
@@ -96,10 +104,15 @@
                     <td></td>
                     <td class="total-high"></td>
                 </tr>
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+
+        </div>
 
         <p class="mt-3 font-14 text-muted">
+            @if (!empty($settings['last_update']['value']))
+            * Last calculator cost update was {{ $settings['last_update']['value'] }}.<br>
+            @endif
             * Whether you fall within the low, mid or high pricing tier is determined by the grade and trim of options/features that you choose.
             <br>
             * This tool is meant to give a rough estimate only.  To receive an official estimate for your house, please contact us.
