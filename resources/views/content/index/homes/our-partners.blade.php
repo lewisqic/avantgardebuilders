@@ -21,7 +21,7 @@
                 <h4 class="text-ag">Kelso Plumbing</h4>
             </div>
             <div class="col-sm-3 mb-5">
-                <h4 class="text-ag">Parkside Concrete</h4>
+                <h4 class="text-ag">MF Concrete</h4>
             </div>
             <div class="col-sm-3 mb-5">
                 <h4 class="text-ag">MKJ Excavating</h4>
@@ -30,7 +30,7 @@
                 <h4 class="text-ag">Innovation Electric</h4>
             </div>
             <div class="col-sm-3 mb-5">
-                <h4 class="text-ag">TBH Heating & Air</h4>
+                <h4 class="text-ag">Martin Heating & Air</h4>
             </div>
             <div class="col-sm-3 mb-5">
                 <h4 class="text-ag">No Limit Drywall & Stucco</h4>
@@ -49,6 +49,9 @@
             </div>
             <div class="col-sm-3 mb-5">
                 <h4 class="text-ag">Horseshoe Mountain Hardware</h4>
+            </div>
+            <div class="col-sm-3 mb-5">
+                <h4 class="text-ag">Maple Canyon Builders</h4>
             </div>
         </div>
 
