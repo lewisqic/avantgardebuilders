@@ -42,7 +42,7 @@
 			<div class="col-sm-12">
 				<div>1125 Blackhawk Blvd, Mount Pleasant, UT 84647</div>
 				<div>
-					<span>Aaron Dennison: 435-262-1586</span>
+					<span>Aaron Dennison: 435-314-5681</span>
 				</div>
 			</div>
 		</div>

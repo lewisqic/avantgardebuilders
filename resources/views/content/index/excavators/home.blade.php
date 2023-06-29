@@ -15,9 +15,9 @@
     <div class="container">
         <div class="my-7">
             <div class="text-center">
-                <h4>Email: <a href="mailto:office@avantgardebuilders.net">office@avantgardebuilders.net</a></h4>
+                <h4>Email: <a href="mailto:pm@avantgardehomes.net">pm@avantgardehomes.net</a></h4>
                 <hr>
-                <h4>Phone: Aaron Dennison, 435-262-1586</h4>
+                <h4>Phone: Aaron Dennison, 435-314-5681</h4>
             </div>
         </div>
     </div>
